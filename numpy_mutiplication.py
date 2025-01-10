@@ -45,5 +45,5 @@ def plain_mat_mul(X):
         [MX[i][j] + B[i][j] for j in range(len(MX[0]))] for i in range(MX)
     ]
 
-    # return
+    # return MX + B
     return Y
