@@ -135,6 +135,10 @@ def sigmoid(X):
     """
 )
 def f(matrix: Matrix):
+    # Check if matrix is 5x5
+    if len(matrix.matrix) != 5 or len(matrix.matrix[0]) != 5:
+        return {"error": "Input matrix must be a 5x5 matrix."}
+
     # Perform calculations
     numpy_result = matrix_mul(matrix.matrix)  # Using NumPy
     non_numpy_result = matrix_mul_without_numpy(matrix.matrix)  # Without NumPy
