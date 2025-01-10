@@ -7,8 +7,8 @@ import math
 
 app = FastAPI()
 
-M = np.random.randn(5, 5)
-B = np.random.randn(5, 1)
+M = np.zeros(5, 5)
+B = np.zeros(5, 1)
 
 class Matrix(BaseModel):
     data: List[List[float]]
