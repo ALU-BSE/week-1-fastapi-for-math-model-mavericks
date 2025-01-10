@@ -14,7 +14,12 @@ class Matrix(BaseModel):
     data: List[List[float]]
 
 def matrix_mul(x):
-    pass
+    try:
+        product = np.dot(M, X)
+        result = product + B
+        return result
+    except ValueError as e:
+        raise ValueError(f"Matrix operation failed: {e}")
 
 def matrix_mul_without_numpy(X):
     # Create result matrix
