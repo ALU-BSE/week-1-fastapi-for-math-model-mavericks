@@ -32,7 +32,7 @@ def matrix_multiply(matrix1, matrix2):
 
 def plain_mat_mul(X):
     # Create result matrix
-    MX = [[0] for _ in len(X[0]) for _ in len(M)]
+    MX = [[0] * len(X[0]) for _ in range(len(M))]
 
     # Do multiplication (MX)
     for i in range(len(M)):
@@ -42,7 +42,7 @@ def plain_mat_mul(X):
     
     # Do addition ( + B)
     Y = [
-        [MX[i][j] + B[i][j] for j in range(len(MX[0]))] for i in range(MX)
+        [MX[i][j] + B[i][j] for j in range(len(MX[0]))] for i in range(len(MX))
     ]
 
     # return MX + B
