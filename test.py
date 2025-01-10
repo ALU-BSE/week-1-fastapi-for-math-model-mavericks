@@ -1,31 +1,30 @@
+from typing import List
 from fastapi import FastAPI
 import uvicorn 
-import numpy as np 
+import numpy as np
+from pydantic import BaseModel
+import math
 
 app = FastAPI()
 
-# use the post decorator directly below this
-'''
-    Initialize M and B as np arrays
-'''
-def f(x):
+M = np.random.randn(5, 5)
+B = np.random.randn(5, 1)
+
+class Matrix(BaseModel):
+    data: List[List[float]]
+
+def matrix_mul(x):
     pass
- 
-#Implement the formula MX + B
-#Have two function one using numpy and another not using numpy
-#Return 
 
-#initialize x as a 5 * 5 matrix
+def matrix_mul_without_numpy(x):
+    pass
 
-#Make a call to the function
+def sigmoid(x):
+    pass
 
-#Recreate the function with the sigmoid Function
+@app.post("/calculate")
+def f(matrix: Matrix):
+    pass
 
 if __name__ == "__main__":
     uvicorn.run(app)
-
-'''
-    Create a requirements.txt
-    Upload to render
-'''
-
